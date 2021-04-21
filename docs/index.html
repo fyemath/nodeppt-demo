@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset=UTF-8><title>An brief Introduction to Nodeppt - By Fei Ye</title><link rel=stylesheet href=https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdn.staticfile.org/prism/1.15.0/themes/prism.min.css><link rel=stylesheet href=https://cdn.staticfile.org/KaTeX/0.10.0-rc.1/katex.min.css><link href=./css/chunk-vendors.4e4765ff.css rel=stylesheet></head><body><div><article id=webslides><section slide class="slide bg-primary bg-gradient-v aligncenter"><div class=wrap wrap=true><h1 class="text-landing text-shadow">An brief Introduction to Nodeppt</h1><p class=text-intro>By Fei Ye</p><p><a href=https://github.com/fyemath/nodeppt-demo class="button ghost" target=_blank><i class="fa fa-github"></i> Github</a></p></div></section><section slide class="slide bg-blue"><div class=wrap wrap=true><h2>What is nodeppt</h2><ul><li><p>A html slide creator</p></li><li><p>Build in js</p></li><li><p>Based on webslides、webpack、markdown-it and posthtml</p></li></ul></div></section><section slide class="slide bg-blue"><div class=wrap wrap=true><h2>Install</h2><pre class=language-textile><code class=language-textile><span class="token phrase">npm install -g nodeppt
+</span></code></pre></div></section><section slide class="slide bg-blue"><div class=wrap wrap=true><h2>Basic Usage</h2><h3>New, Preview and Build</h3><pre class=language-textile><code class=language-textile><span class="token phrase"><span class="token list"><span class="token punctuation">#</span> create a new slide with an official template</span>
+$ nodeppt new slide.md</span>
+
+<span class="token phrase"><span class="token list"><span class="token punctuation">#</span> start local sever to preview slide</span>
+$ nodeppt serve slide.md</span>
+
+<span class="token phrase"><span class="token list"><span class="token punctuation">#</span> build a slide using the default output dir</span>
+$ nodeppt build slide.md</span>
+
+<span class="token phrase"><span class="token list"><span class="token punctuation">#</span> build a slide using customized output dir</span>
+$ nodeppt build -d dirname slide.md
+</span></code></pre><h3>Help</h3><pre class=language-textile><code class=language-textile><span class="token phrase"><span class="token list"><span class="token punctuation">#</span> help</span>
+nodeppt -h
+<span class="token list"><span class="token punctuation">#</span> serve help</span>
+nodeppt serve -h
+</span></code></pre></div></section><section slide class="slide bg-blue"><div class=wrap wrap=true><h2>Presenting Usage</h2><h3>Presenter mode</h3><p>To open the presenter mode, add <code>?mode=speaker</code> after the url.</p><h3>Keyboard Shortcuts</h3><ul><li>Page:: ↑/↓/←/→ Space Home End</li><li>Fullscreen:: F</li><li>Overview:: -/+</li><li>Speaker Note:: N</li><li>Grid Background:: Enter</li></ul></div></section><section slide class="slide bg-blue"><div class=wrap wrap=true><h2>Composing Slides</h2><p>Nodeppt uses markdonw syntax and <code>&lt;slides&gt;</code> to break the file into individual slide.</p><p>One can figure the slides in the top part using yaml language. For example,</p><pre class=language-yaml><code class=language-yaml><span class="token key atrule">title</span><span class="token punctuation">:</span> nodeppt markdown demo
+<span class="token key atrule">speaker</span><span class="token punctuation">:</span> 三水清
+<span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/ksky521/nodeppt
+<span class="token key atrule">js</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> https<span class="token punctuation">:</span>//www.echartsjs.com/asset/theme/shine.js
+<span class="token key atrule">prismTheme</span><span class="token punctuation">:</span> solarizedlight
+<span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> echarts
+    <span class="token punctuation">-</span> katex
+</code></pre></div></section><section slide class="slide bg-blue"><div class=wrap wrap=true><h2>Slide Configuration - Syntax</h2><ul><li><p>Nodeppt recognize each <code>&lt;slide&gt;</code> as a new slide indicator and uses it to layout the whole markdown file into slides.</p></li><li><p>Slide style can be configured by adding tags to <code>&lt;slide&gt;</code>.</p></li><li><p>Supported tags includes:</p><ul><li><code>class/style</code></li><li><code>image=&quot;img_url&quot;</code> for slides background</li><li><code>video=&quot;video_src1,video_src2&quot;</code> for slides background video</li><li><code>:class</code> add class to the wrapper.</li></ul></li></ul></div></section><section slide class="slide bg-blue"><div class=wrap wrap=true><h2>Slide Configuration - Example</h2><pre class=language-textile><code class=language-textile>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slide</span> <span class="token attr-name">image</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://source.unsplash.com/UJbHNoVPZW0/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- adding a background image --></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slide</span> <span class="token attr-name">image</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://source.unsplash.com/UJbHNoVPZW0/ .dark<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- adding a background image and a dark layer --></span>
+</code></pre><ul><li>For available classes, please see <a href=https://github.com/ksky521/nodeppt/blob/master/site/classes.md target=_blank>ksky521/nodeppt/site/classes.md</a> on github.</li></ul></div></section></article></div><script src=https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js></script><script>window.pluginsOptions = {}
+
+
+
+    window.webslidesOptions = {}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    let isPrintMode = false;
+    if(~location.search.indexOf('print-pdf')){
+        isPrintMode = true;
+        WebSlides.registerPlugin('scroll', function(){});
+    }
+    const wsOptions = {
+        loop: false
+    };
+    if(window.webslidesOptions){
+        for (let i in webslidesOptions){
+            if(webslidesOptions.hasOwnProperty(i)){
+                wsOptions[i] = webslidesOptions[i];
+            }
+        }
+    }
+    const ws = new WebSlides(wsOptions)
+
+    window.wsInstance = ws;
+    if(isPrintMode){
+        ws.slides.forEach(s=>s.show())
+    }
+}, false)</script><script src=./js/chunk-vendors.js></script><script src=./js/index.js></script></body></html>

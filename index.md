@@ -1,17 +1,28 @@
-title: Intro to Nodeppt
-speaker: Fei
+title: An brief Introduction to Nodeppt
+speaker: Fei Ye
 plugins:
     - echarts
+    - KaTeX
 
 <slide class="bg-primary bg-gradient-v  aligncenter">
 
-# Intro to Nodeppt {.text-landing.text-shadow}
+# An brief Introduction to Nodeppt {.text-landing.text-shadow}
 
-By Fei {.text-intro}
+By Fei Ye {.text-intro}
 
-<!-- [:fa-github: Github](https://github.com/ksky521/nodeppt){.button.ghost} -->
+[:fa-github: Github](https://github.com/fyemath/nodeppt-demo){.button.ghost}
 
-<slide class="bg-light">
+<slide class="bg-blue">
+
+## What is nodeppt
+
+- A html slide creator
+
+- Build in js
+
+- Based on webslides、webpack、markdown-it and posthtml
+
+<slide class="bg-blue">
 
 ## Install
 
@@ -19,7 +30,7 @@ By Fei {.text-intro}
 npm install -g nodeppt
 ```
 
-<slide class="bg-light">
+<slide class="bg-blue">
 
 ## Basic Usage
 
@@ -48,7 +59,7 @@ nodeppt -h
 nodeppt serve -h
 ```
 
-<slide class="bg-light">
+<slide class="bg-blue">
 
 ## Presenting Usage
 
@@ -64,7 +75,7 @@ To open the presenter mode, add `?mode=speaker` after the url.
 - Speaker Note: N
 - Grid Background: Enter
 
-<slide class="bg-light">
+<slide class="bg-blue">
 
 ## Composing Slides
 
@@ -84,7 +95,7 @@ plugins:
     - katex
 ```
 
-<slide class="bg-light">
+<slide class="bg-blue">
 
 ## Slide Configuration - Syntax
 
@@ -101,7 +112,7 @@ plugins:
   - `:class`
     add class to the wrapper.
 
-<slide class="bg-light">
+<slide class="bg-blue">
 
 ## Slide Configuration - Example
 
